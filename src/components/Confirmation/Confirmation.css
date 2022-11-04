@@ -1,0 +1,24 @@
+.confirm-main-div{
+  margin: 1rem;
+}
+
+.fa-check-circle{
+  font-size: 5rem;
+  color: white;
+  background-color: red;
+  margin: 1rem;
+  border: 1px dotted;
+  border-radius: 50%;
+}
+
+#track{
+  padding: 1rem 3rem;
+  background: #000;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.confirm-main-div .summary-section{
+  flex: 50%;
+}

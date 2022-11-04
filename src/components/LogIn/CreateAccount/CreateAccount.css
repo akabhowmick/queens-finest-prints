@@ -1,0 +1,26 @@
+.new-account{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label{
+  font-size: 1.25rem;
+  text-align: left;
+}
+
+.error-message-top, .error-message-field-text{
+  color: indianred;
+  font-size: 0.75rem;
+}
+
+.password-visible p{
+  font-size: 0.75rem;
+  width: 35%;
+  margin: 0 auto 0.85rem;
+  color: silver;
+}
+
+#fb{
+  background: #4267B2;
+}
