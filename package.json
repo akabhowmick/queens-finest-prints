@@ -1,6 +1,7 @@
 {
   "name": "queens",
   "version": "0.1.0",
+  "homepage": "https://akabhowmick.github.io/qfs/",
   "private": false,
   "dependencies": {
     "@chec/commerce.js": "^2.8.0",
