@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/queens-finest-prints/static/css/main.19796bcc.css",
-    "main.js": "/queens-finest-prints/static/js/main.8d61d3e4.js",
+    "main.css": "/queens-finest-prints/static/css/main.772fca93.css",
+    "main.js": "/queens-finest-prints/static/js/main.d904d0f1.js",
     "static/media/logo.png": "/queens-finest-prints/static/media/logo.8aff389429bf15f9ed00.png",
     "static/media/ebay.png": "/queens-finest-prints/static/media/ebay.d376e6eecf9d8f727b5f.png",
     "static/media/etsy.png": "/queens-finest-prints/static/media/etsy.b660a3cf6892e2710361.png",
     "static/media/tiktok.png": "/queens-finest-prints/static/media/tiktok.c8c1a6f2d991dc53d12f.png",
     "index.html": "/queens-finest-prints/index.html",
-    "main.19796bcc.css.map": "/queens-finest-prints/static/css/main.19796bcc.css.map",
-    "main.8d61d3e4.js.map": "/queens-finest-prints/static/js/main.8d61d3e4.js.map"
+    "main.772fca93.css.map": "/queens-finest-prints/static/css/main.772fca93.css.map",
+    "main.d904d0f1.js.map": "/queens-finest-prints/static/js/main.d904d0f1.js.map"
   },
   "entrypoints": [
-    "static/css/main.19796bcc.css",
-    "static/js/main.8d61d3e4.js"
+    "static/css/main.772fca93.css",
+    "static/js/main.d904d0f1.js"
   ]
 }
