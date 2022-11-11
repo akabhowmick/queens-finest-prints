@@ -72,10 +72,6 @@
   margin-bottom: 20px;
 }
 
-.dbox .icon:hover{
-  box-shadow: 5px 5px 0px #ff96ad;
-}
-
 .dbox p span {
   font-weight: 500;
   color: #000;

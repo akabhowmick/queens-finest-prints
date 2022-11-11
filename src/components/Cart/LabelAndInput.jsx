@@ -1,9 +1,7 @@
 import React from 'react';
+import "./Cart.css";
 
 class LabelAndInput extends React.Component{
-  constructor(props){
-    super(props);
-  }
 
   handleCustomInput = (e) =>{
     let field = e.target.name;

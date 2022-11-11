@@ -1,6 +1,7 @@
+/* eslint-disable react/no-direct-mutation-state */
 import React from 'react';
 import StorePage from './StorePage/StorePage.jsx';
-import LogIn from './LogIn/LogIn.jsx';
+// import LogIn from './LogIn/LogIn.jsx';
 import Cart from './Cart/Cart.jsx';
 import Shipping from './Shipping/Shipping.jsx'
 import Payment from './Payment/Payment.jsx';
@@ -58,11 +59,7 @@ class Commerce extends React.Component{
   }
 
   updateShipping = (field, val) => {
-    if(field === 'amount'){
-      this.setState({shippingCost: val});
-    } else if (field === 'address'){
-      this.setState({shippingAddress: val});
-    }
+    this.setState({[field]: val});
   }
 
   updateStateNumber = (newState) =>{
@@ -128,7 +125,6 @@ class Commerce extends React.Component{
     }
   }
 
-  // fix this later
   addReqField = (field, value, itemId) =>{
     for(let i=0; i<this.state.cartItems.length; i++){
       if(this.state.cartItems[i].id === itemId){
@@ -141,7 +137,7 @@ class Commerce extends React.Component{
   render(){
     let cartDiv = <div className='cart-store-display' onClick={(e)=>this.checkCart(e)}>
       <span className='cart-item-img'>
-        <img src={cartImage} alt='cart-image' width="23" />
+        <img src={cartImage} alt='cart' width="23" />
       </span>
       <span className='cart-item-tag'>{this.state.cartItems.length} Item(s)</span>
       <span className='cart-item-cost'>${this.state.totalCost}.00</span>
@@ -152,7 +148,6 @@ class Commerce extends React.Component{
       subPage = <div className='store-view'>
         <div>{cartDiv}</div>
         <HomePage />
-        <h2>You can buy: </h2>
         <div id='products'> 
           <StorePage data={this.state} addProducts={this.addProducts} updateCart={this.updateCart} viewPage={this.updateStateNumber} userLoggedIn={this.state.userLoggedIn}/>
         </div>
@@ -179,7 +174,7 @@ class Commerce extends React.Component{
     return(
       <div className='main-store-page'>
         <div className='site-header'>
-          <Navbar />
+          <Navbar stateNumber={this.state.stateNumber}/>
         </div>
         <div style={{marginTop: "100px"}}>{subPage}</div>
         <Footer />

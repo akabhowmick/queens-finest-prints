@@ -18,23 +18,31 @@ class Navbar extends React.Component{
     return(
       <nav id="navbar" className="navbare sticky">
         <div className="navigation nav-container">
-          <button onClick={(e)=> this.toggleNav()} id="ham-menu" className="navbar-toggler" aria-expanded="false" aria-controls="navbarDropdown">
-            <div className='hamburger-lines' id="hamburger-lines">
-              <span className="line line1"></span>
-              <span className="line line2"></span>
-              <span className="line line3"></span>
+          {this.props.stateNumber < 2 &&
+            <div>
+              <button onClick={(e)=> this.toggleNav()} id="ham-menu" className="navbar-toggler" aria-expanded="false" aria-controls="navbarDropdown">
+                <div className='hamburger-lines' id="hamburger-lines">
+                  <span className="line line1"></span>
+                  <span className="line line2"></span>
+                  <span className="line line3"></span>
+                </div>
+              </button>
+              <ul className="navbar-nav">
+                <li className="nav-link"><a href="index.html">Home</a></li>
+                <li className="nav-link"><a href="#products">Products</a></li>
+                <li className="nav-link"><a href="#contact">Contact Us</a></li>
+                <li className="nav-link"><a className="toggles-show" href="#products">Buy Now</a></li>
+              </ul>
             </div>
-          </button>
-          <ul className="navbar-nav">
-            <li className="nav-link"><a href="index.html">Home</a></li>
-            <li className="nav-link"><a href="#products">Products</a></li>
-            <li className="nav-link"><a href="#contact">Contact Us</a></li>
-            <li className="nav-link"><a className="toggles-show" href="#products">Buy Now</a></li>
-          </ul>
-          <a className="navbar-brand" href="index.html">Queens Finest Prints</a>
-          <ul className="navbar-buy">
-            <li className="nav-link"><a className="btn btn-primary" href="#products">Buy Now</a></li>
-          </ul>
+          }
+          <a className="navbar-brand" href="index.html">QUEENS FINEST PRINTS</a>
+          {this.props.stateNumber < 2 &&
+            <div>
+              <ul className="navbar-buy">
+                <li className="nav-link"><a className="btn btn-primary" href="#products">Buy Now</a></li>
+              </ul>
+            </div>
+          }
         </div>
       </nav>
     )

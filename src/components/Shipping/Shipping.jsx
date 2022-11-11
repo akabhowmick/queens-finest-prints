@@ -68,7 +68,7 @@ class Shipping extends React.Component{
   }
 
   componentDidMount = () => {
-    this.props.updateShipping(this.state.shippingPrice);
+    this.props.updateShipping('shippingCost', 5);
   }
 
   handleInputChange = (e) => {
@@ -81,10 +81,10 @@ class Shipping extends React.Component{
     const {value} = e.target;
     if(value === 'express'){
       this.setState({deliveryMethod: value, shippingPrice: 15});
-      this.props.updateShipping('amount', 15);
+      this.props.updateShipping('shippingCost', 15);
     } else {
       this.setState({deliveryMethod: value, shippingPrice: 5});
-      this.props.updateShipping('amount', 5);
+      this.props.updateShipping('shippingCost', 5);
     }
     
   }
@@ -112,7 +112,9 @@ class Shipping extends React.Component{
         state: this.state.fields.state,
         zipCode: this.state.fields.zipCode,
       }
-      this.props.updateShipping('address',shippingAddress);
+      this.props.updateShipping('shippingAddress',shippingAddress);
+      this.props.updateShipping('shippingName', this.state.fields.name);
+      this.props.updateShipping('shippingEmail', this.state.fields.email);
     }
   }
 

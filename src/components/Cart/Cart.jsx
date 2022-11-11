@@ -22,6 +22,7 @@ class Cart extends React.Component{
   }
 
   componentDidMount(){
+    window.scrollTo(0, 0);
     this.totalCartCost();
   }
 
@@ -30,10 +31,6 @@ class Cart extends React.Component{
       this.totalCartCost();
       this.setState({cart: this.props.data.cartItems})
     }
-  }
-
-  handleCancelBtn = (e) => {
-    this.props.viewPage(1);
   }
 
   render(){
@@ -47,10 +44,13 @@ class Cart extends React.Component{
             <div className='cart-table-entry'>
             {!this.state.cartEmpty &&
               <div>
+                <h3>Complete the customization for the items in the cart!</h3>
+                <h4>If you want to submit additional pictures, please do so during confirmation!</h4>
               {this.state.cart.map(function(item,index){
                 return (
                   <div key={ index } id={ index }>
                     <CartItem cart={cart} data={item} updateCart={updateCart} totalCartCost={totalCartCost} addReqField={addReqField}/>
+                    <hr />
                   </div>)})
               }
               </div>
@@ -64,8 +64,8 @@ class Cart extends React.Component{
           <div className='summary-section'>
             <Summary data={this.props.data} viewPage={viewPage} cost={this.state.cost} updateState={updateState}/>
           </div>
+          <hr />
         </div>
-        <button type="button" onClick={(e)=>this.handleCancelBtn(e)} className="cancelbtn btn-primary round-pill">Back to Store</button>
       </div>
     )
   }

@@ -64,14 +64,14 @@ class CodeCard extends React.Component{
     let description = this.descWithoutHTML(this.props.data.desc);
     let btn;
     if (addedToCart===true){
-      btn = <button onClick={(e)=>this.handleBtnClick(e)} id={id} className="btn-primary round-pill">Remove from Cart!</button>
+      btn = <button onClick={(e)=>this.handleBtnClick(e)} id={id} className="btn btn-primary round-pill">Remove from Cart!</button>
     } else {
-      btn = <button onClick={(e)=>this.handleBtnClick(e)} id={id} className="btn-primary round-pill">Add to Cart!</button>
+      btn = <button onClick={(e)=>this.handleBtnClick(e)} id={id} className="btn btn-primary round-pill">Add to Cart!</button>
     }
     return(
       <div className="card">
         <div className="card-image">
-            <img src={img} alt="card-sale" />
+          <img src={img} alt="card-sale" />
         </div>
         <h3>{name} <p>${price}.00</p></h3>
         <div className="card-modal">
@@ -81,6 +81,7 @@ class CodeCard extends React.Component{
         {this.state.learnMoreClicked && 
         <div className='card-details'>
           <div className='card-details-pic'>
+            <h3>Scroll down for details and more examples!</h3>
             <img src={this.state.currentImage} alt="card-sale" />
             <div className="slide-ctrl-container">
               <button onClick={(e)=>this.goToPrev()}>
@@ -94,7 +95,7 @@ class CodeCard extends React.Component{
           <div className='card-details-text'>
             <h3>{name}</h3>
             <h4 className='desc'>{description}</h4>
-            <p className='green-price'>${price}.00+</p>
+            <p className='orange-price'>${price}.00+</p>
             <div className="card-modal">
               <button onClick={(e)=>this.backToHome(e)} className="btn-primary round-pill">Back to Home!</button>
               <div className='btnDisplay'>{btn}</div>

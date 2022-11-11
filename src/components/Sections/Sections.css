@@ -30,6 +30,30 @@
   color: var(--white);
 }
 
+h1{
+  position: relative;
+  font-size: 5rem;
+  font-weight: 600;
+  font-family: 'Raleway', san-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: animate 4s infinite steps(50) alternate;
+}
+
+@keyframes animate{
+  from{
+    width: 0;
+  } 
+  to {
+    width: 120%;
+  }
+}
+
+.action-btns{
+  margin: 1rem 1rem 2rem;
+}
+
 /* Reviews*/
 .reviews{
   text-align: center;
@@ -173,15 +197,15 @@
 }
 
 .footer-dark .item.social > a {
-  width: 64px;
-  height: 64px;
-  line-height: 64px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
   text-align: center;
   border-radius: 50%;
   box-shadow: 0 0 0 2px rgb(0 0 0 / 0.4);
-  margin: 0 15px;
+  margin: 10px;
   color: #fff;
-  opacity: 0.75;
+  opacity: 0.6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,6 +214,7 @@
 .footer-dark .item.social > a > i, 
 .footer-dark .item.social > a > img{
   margin: 0 auto;
+  color: var(--footer);
 }
 
 .fake-icon{
@@ -199,9 +224,7 @@
 
 .footer-dark .item.social > a:hover {
   opacity: 1;
-  box-shadow: 6px 6px 0px #ff96ad;
-  top:-5px;
-  left: -5px;
+  box-shadow: 0 0 0 2px var(--logo-orange);
 }
 
 .footer-dark .copyright {

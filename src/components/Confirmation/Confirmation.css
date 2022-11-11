@@ -1,7 +1,3 @@
-.confirm-main-div{
-  margin: 1rem;
-}
-
 .fa-check-circle{
   font-size: 5rem;
   color: white;
@@ -19,6 +15,58 @@
   font-size: 1.5rem;
 }
 
-.confirm-main-div .summary-section{
-  flex: 50%;
+.send-info-div button{
+  white-space: break-spaces
+}
+
+.reminder{
+  display: inline;
+}
+
+.hidden{
+  display: none;
+}
+
+.final-reminder button{
+  animation: wiggle 2s linear infinite;
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-8deg);
+  }
+  20% {
+    transform: rotateZ(6deg);
+  }
+  25% {
+    transform: rotateZ(-6deg);
+  }
+  30% {
+    transform: rotateZ(4deg);
+  }
+  35% {
+    transform: rotateZ(-2deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+.confirm-main-div, .send-info-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#product-image{
+  color: var(--logo-blue);
+}
+
+.product-image-div #myFile{
+  margin: 2rem auto;
 }

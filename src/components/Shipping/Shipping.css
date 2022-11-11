@@ -1,16 +1,20 @@
+.shipping-info{
+  font-size: 16px;
+  min-width: 325px;
+}
+
 .shipping-form{
   display: flex;
   flex-wrap: wrap;
   text-align: left;
-  padding: 1rem;
   border-radius: 10px;
-  margin: 0 1rem 0 0;
+  margin: 0 auto;
 }
 
 
 .shipping-div{
-  min-width: 400px;
-  text-align: right;
+  text-align: left;
+  margin-top: 2rem;
 }
 
 .shipping-div .round-pill{

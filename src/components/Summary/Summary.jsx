@@ -11,7 +11,8 @@ class Summary extends React.Component{
       taxAmount: 0,
       promoCodes: {
         code: 'dummyPromo',
-        amount: 35
+        amount: 35,
+        codes: ['1FREE', 'SAVE10']
       },
       finalCost: 0,
       codeEntered: ''
@@ -62,6 +63,10 @@ class Summary extends React.Component{
     }
   }
 
+  handleCancelBtn = (e) => {
+    this.props.viewPage(1);
+  }
+
   handleShippingBtn = (e) => {
     this.props.viewPage(4);
   }
@@ -79,6 +84,7 @@ class Summary extends React.Component{
     this.setState({codeEntered: e.target.value})
   }
 
+  // fix this for promo code
   handleInputClick = (e) => {
     if(this.state.codeEntered===this.state.promoCodes.code){
       this.setState({discount:this.state.promoCodes.amount });
@@ -101,8 +107,8 @@ class Summary extends React.Component{
         btn = <button type="button" onClick={(e)=>this.handlePaymentBtn(e)} className="btn-primary round-pill">Pay ${this.state.finalCost}</button>;
       }
     } else if(this.props.data.stateNumber === 5){
-      if(this.props.errors === true ){ 
-        btn = <button id='disabled' type="button" onClick={(e)=>this.handleConfirmBtn(e)} className="btn-primary round-pill">Confirm Order!</button>;
+      if(this.props.paymentSuccess === false ){ 
+        btn = <button id='disabled' type="button" onClick={(e)=>this.handleConfirmBtn(e)} className="btn-primary round-pill">Complete Payment to Confirm Order!</button>;
       } else {
         btn = <button type="button" onClick={(e)=>this.handleConfirmBtn(e)} className="btn-primary round-pill">Confirm Order!</button>;
       }
@@ -157,6 +163,7 @@ class Summary extends React.Component{
             <h4>Discount: ${this.state.discount}.00</h4>
             <h4>Cart Total: ${this.props.cost - this.state.discount}.00</h4>
           </div>
+          <button type="button" onClick={(e)=>this.handleCancelBtn(e)} className="cancelbtn btn-primary round-pill">Back to Store</button>
           {btn}
         </div>
       </div>
@@ -199,7 +206,7 @@ class Summary extends React.Component{
 
     return(
       <div className='summary-section'>
-        <h3>Summary</h3>
+        <h2 className='summary-title'>Summary</h2>
         <div>{summaryDiv}</div>
       </div>
     )

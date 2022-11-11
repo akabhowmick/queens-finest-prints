@@ -1,3 +1,11 @@
+.payment-view{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
 .payment-form{
   display: flex;
   flex-wrap: wrap;
@@ -21,5 +29,11 @@
 }
 
 .btn-row{
+  margin: 0 auto;
+}
+
+.paypal-buttons {
+  max-width: 750px; 
+  min-Height: 200px;
   margin: 0 auto;
 }

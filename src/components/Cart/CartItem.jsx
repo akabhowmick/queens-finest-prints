@@ -13,6 +13,18 @@ class CartItem extends React.Component{
     }
   }
 
+  // fix
+  handleCustomInput = (e) =>{
+    let field = e.target.name;
+    let value = e.target.value;
+    this.setState({[field]: value});
+    if(e.target.name === 'filename'){
+      console.log(e.target.files ,URL.createObjectURL(e.target.files[0]));
+      value = e.target.files[0];
+    }
+    this.props.addReqField(field, value, this.props.data.id);
+  }
+
   handleQuantityChange = (e) => {
     let item = this.props.data;
     if(e.target.value <= item.inventory){
@@ -53,7 +65,7 @@ class CartItem extends React.Component{
             <div>
               <i id={item.id} className="fas fa-times-circle" onClick={(e)=>this.handleDeleteBtn(e)}></i>
             </div>
-            <div>
+            <div className='item-name'>
               {item.name}
             </div>
           </div>
@@ -86,6 +98,10 @@ class CartItem extends React.Component{
             </div>
           )
         })}
+        {/* <div className="cart-table-item requirements">
+          <label className="label" htmlFor="name">Upload Image *optional</label>
+          <input onChange={(e)=>this.handleCustomInput(e)} type="file" id="myFile" name="filename" accept="image/png, image/jpeg" />
+        </div> */}
       </div>
     )
   }

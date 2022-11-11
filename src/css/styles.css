@@ -20,7 +20,7 @@
   --danger: #FF888D;
   --grad-1: #a1ecff;
   --grad-2: #7dcbff;
-  --blue-background: #86bbd8;
+  --blue-background: #92aed4;
   --orange-background: #f59b1b; 
   --logo-blue: #0b3b9c;
   --logo-orange: #f5791d;
@@ -58,8 +58,8 @@ nav {
  }
 
  div, span, p{
-   color: var(--color-text-base);
-   font-family: 'Open Sans', 'Lucida Grande', 'Lucida Sans Unicode', 'Veranda', 'Arial', sans-serif;
+   color: var(--logo-blue);
+   font-family: 'Raleway','Open Sans', 'Lucida Grande', 'Lucida Sans Unicode', 'Veranda', 'Arial', sans-serif;
  }
 
  hr{
@@ -68,7 +68,7 @@ nav {
  }
 
  h1, h2, h3, h4, h5{
-   color: var(--color-headings);
+   color: var(--logo-blue);
    margin-top: 0.25rem;
    margin-bottom: 0.5rem;
    font-family: 'Raleway', sans-serif;
@@ -125,9 +125,8 @@ button:not(:disabled):not(.disabled){
 .btn:hover,
 .btn-primary:hover,
 .dbox .icon:hover{
-  box-shadow: 10px 10px 0px #ff96ad;
-  background: var(--grad-2);
-  border-color: var(--grad-2);
+  background: var(--logo-orange);
+  border-color: var(--logo-orange);
   opacity: 1;
   top:-5px;
   left: -5px;
@@ -206,15 +205,12 @@ button:not(:disabled):not(.disabled){
 .summary-section{
   padding: 1rem;
   border-radius: 10px;
-  margin-bottom: 2rem;
+  margin: 0 auto;
 }
 
-/* Left side */
 .shipping-info, .main-cart, .payment-div, .confirm-sub-div{
-  flex: 1;
   padding: 1rem;
-  margin: 0 3rem 2rem 0;
-  border-radius: 10px;
+  margin: 0 auto;
 }
 
 .cart-store-display{

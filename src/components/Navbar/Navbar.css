@@ -71,10 +71,10 @@
 }
 
 .navbar-brand {
-  font-size: 3rem;
   font-weight: 700;
+  font-family: 'Quicksand', sans-serif;
   color: var(--logo-orange);
-  font-family: cursive;
+  margin: 0 auto;
 }
 
 .navbar-brand:hover{

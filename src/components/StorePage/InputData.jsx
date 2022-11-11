@@ -1,4 +1,4 @@
-const XAUTHORIZATION = "pk_test_425760b934b89ad5046a55ca0801429580aa7aa2138df"
+const XAUTHORIZATION = process.env.REACT_APP_CHEC_PUBLIC_KEY_My_Store;
 
 const url = new URL (
     "https://api.chec.io/v1/products"
