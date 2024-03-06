@@ -9,11 +9,6 @@ class Summary extends React.Component{
       shippingCost: 0,
       discount: 0,
       taxAmount: 0,
-      promoCodes: {
-        code: 'dummyPromo',
-        amount: 35,
-        codes: ['1FREE', 'SAVE10']
-      },
       finalCost: 0,
       codeEntered: ''
     }
@@ -32,7 +27,7 @@ class Summary extends React.Component{
   }
 
   setFinalCost = () => {
-    let currentFinal = this.state.cartSubTotal + this.props.data.shippingCost - this.state.discount;
+    let currentFinal = this.state.cartSubTotal + this.props.data.shippingCost - this.props.data.finalDiscount;
     let tax = Math.round(100*(this.state.cartSubTotal*0.0875))/100;
     this.setState({
       finalCost: (currentFinal + tax).toFixed(2),
@@ -45,7 +40,10 @@ class Summary extends React.Component{
 
   componentDidMount(){
     if(this.props.data.stateNumber > 3){
-      this.setState({shippingCost: this.props.data.shippingCost})
+      this.setState({
+        shippingCost: this.props.data.shippingCost,
+        discount: this.props.data.finalDiscount
+      })
     }
     this.setCurrentTotal();
   }
@@ -68,11 +66,12 @@ class Summary extends React.Component{
   }
 
   handleShippingBtn = (e) => {
+    this.props.updateState('codeEntered', this.state.codeEntered);
     this.props.viewPage(4);
   }
 
   handlePaymentBtn = (e) => {
-    this.props.updateShipping(this.props.shippingCost);
+    this.props.updateShipping('shippingCost', this.props.shippingCost);
     this.props.viewPage(5);
   }
 
@@ -84,12 +83,15 @@ class Summary extends React.Component{
     this.setState({codeEntered: e.target.value})
   }
 
-  // fix this for promo code
   handleInputClick = (e) => {
-    if(this.state.codeEntered===this.state.promoCodes.code){
-      this.setState({discount:this.state.promoCodes.amount });
-      this.props.updateState('finalDiscount', this.state.promoCodes.amount);
+    let discountAmount =  0; 
+    if(this.state.codeEntered === '20OFF'){
+      discountAmount = 20;
+    } else if (this.state.codeEntered === 'SAVE10'){
+      discountAmount = Math.round(100*(this.state.cartSubTotal * 0.10))/100;
     }
+    this.setState({discount:discountAmount });
+    this.props.updateState('finalDiscount', discountAmount);
   }
 
   render(){
@@ -104,7 +106,7 @@ class Summary extends React.Component{
       if(this.props.errors === true ){ 
         btn = <button id='disabled' type="button" onClick={(e)=>this.handlePaymentBtn(e)} className="btn-primary round-pill">Validate Address to go to Payment!</button>;
       } else {
-        btn = <button type="button" onClick={(e)=>this.handlePaymentBtn(e)} className="btn-primary round-pill">Pay ${this.state.finalCost}</button>;
+        btn = <button type="button" onClick={(e)=>this.handlePaymentBtn(e)} className="btn-primary round-pill">Pay ${(this.state.cartSubTotal+this.props.data.shippingCost+this.state.taxAmount-this.props.data.finalDiscount).toFixed(2)}</button>;
       }
     } else if(this.props.data.stateNumber === 5){
       if(this.props.paymentSuccess === false ){ 
@@ -141,9 +143,9 @@ class Summary extends React.Component{
     <div className='cart-info'>
       <h4>Cart SubTotal: ${this.state.cartSubTotal}.00</h4>
       <h4>Shipping and Handling: ${this.props.data.shippingCost}.00</h4>
-      <h4>Discount: ${this.props.data.finalDiscount}.00</h4>
+      <h4>Discount: ${this.props.data.finalDiscount.toFixed(2)}</h4>
       <h4>Tax: ${this.state.taxAmount}</h4>
-      <h4>Cart Total: ${this.state.finalCost}</h4>
+      <h4>Cart Total: ${(this.state.cartSubTotal+this.props.data.shippingCost+this.state.taxAmount-this.props.data.finalDiscount).toFixed(2)}</h4>
       <hr />
     </div>
 
@@ -158,10 +160,10 @@ class Summary extends React.Component{
             <button className="btn-primary round-pill" onClick={(e)=>this.handleInputClick(e)}>Apply</button>
           </div>
           <div className='cart-info'>
-            <h4>Cart SubTotal: ${this.props.cost}.00</h4>
+            <h4>Cart SubTotal: ${this.props.cost.toFixed(2)}</h4>
             <h4>Shipping and Handling: --</h4>
-            <h4>Discount: ${this.state.discount}.00</h4>
-            <h4>Cart Total: ${this.props.cost - this.state.discount}.00</h4>
+            <h4>Discount: ${this.state.discount.toFixed(2)}</h4>
+            <h4>Cart Total: ${(this.props.cost - this.state.discount).toFixed(2)}</h4>
           </div>
           <button type="button" onClick={(e)=>this.handleCancelBtn(e)} className="cancelbtn btn-primary round-pill">Back to Store</button>
           {btn}

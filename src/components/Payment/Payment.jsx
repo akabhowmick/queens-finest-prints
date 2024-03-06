@@ -3,6 +3,7 @@ import { PayPalScriptProvider} from "@paypal/react-paypal-js";
 import Summary from '../Summary/Summary.jsx';
 import './Payment.css'
 import ButtonWrapper from './ButtonWrapper.jsx';
+import CheckoutStatusBar from '../Sections/CheckoutStatusBar.jsx';
 
 class Payment extends React.Component{
   constructor(props){
@@ -27,6 +28,8 @@ class Payment extends React.Component{
     return(
       <div>
         <div className='payment-info'>
+          <CheckoutStatusBar cart shipping payment></CheckoutStatusBar>
+          <h2 className='page-title'>Payment</h2>
           <div className='paypal-buttons'>
             <h3>Complete the payment!</h3>
             <PayPalScriptProvider

@@ -48,7 +48,7 @@ class Contact extends React.Component{
                     </div>
                     <div className="col-md-3">
                       <div className="dbox w-100 text-center">
-                        <div className="icon d-flex align-items-center justify-content-center" onClick={event => window.location.href='https://www.instagram.com/queensfinestcards/'} >
+                        <div className="icon d-flex align-items-center justify-content-center" onClick={event => window.location.href='https://www.instagram.com/queensfinestprints/'} >
                           <span className="fa fa-globe"></span>
                         </div>
                         <div className="text">
@@ -62,8 +62,9 @@ class Contact extends React.Component{
                       <div className="contact-wrap w-100 p-md-5 p-4">
                         <h3 className="mb-4">Contact Us</h3>
                         <div id="form-message-warning" className="mb-4"></div> 
-                          <form action="https://formsubmit.co/akabhowmick@gmail.com" method="POST" id="contactForm" name="contactForm" className="contactForm" encType="multipart/form-data">
+                          <form action="https://formsubmit.co/christiancardenas13@gmail.com" method="POST" id="contactForm" name="contactForm" className="contactForm" encType="multipart/form-data">
                             <input type="hidden" name="_subject" value="Inquiry for Queens Finest Prints!" />
+                            <input type="hidden" name="_next" value="https://akabhowmick.github.io/queens-finest-prints/" />
                             <input type="hidden" name="_template" value="table" />
                             <div className="col-md-6">
                               <div className="form-group">
@@ -93,7 +94,7 @@ class Contact extends React.Component{
                             <div className="col-md-6">
                               <div className="form-group">
                                 <label className="label" htmlFor="name">Upload Image *optional</label>
-                                <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg" />
+                                <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg" multiple />
                               </div>
                             </div>
                             <div className="col-md-12">

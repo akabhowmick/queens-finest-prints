@@ -39,7 +39,7 @@ class Navbar extends React.Component{
           {this.props.stateNumber < 2 &&
             <div>
               <ul className="navbar-buy">
-                <li className="nav-link"><a className="btn btn-primary" href="#products">Buy Now</a></li>
+                <li id='buy-now-btn' className="nav-link"><a className="btn btn-primary" href="#products">Buy Now</a></li>
               </ul>
             </div>
           }

@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Sections.css";
-import logo from "../Images/logo.png";
+import logo from "../Images/logo2.png";
 
 class HomePage extends React.Component{
   render(){

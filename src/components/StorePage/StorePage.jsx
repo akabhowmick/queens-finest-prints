@@ -71,14 +71,14 @@ class StorePage extends React.Component{
     return(
       <div className='main-store-page'>
         <div className="scrolling-words-container">
-          <span>You can buy: </span>
+          <span>You can buy custom: </span>
           <div className="scrolling-words-box">
             <ul>
-              <li>Custom Card Stands</li>
-              <li>Funko Pop Stands</li>
-              <li>Custom Videogame Stands</li>
-              <li>Custom Box Organizers</li>
-              <li>Custom City Skylines</li>
+              <li>Card Stands</li>
+              <li>Funko-Pop Stands</li>
+              <li>Videogame Stands</li>
+              <li>Box Organizers</li>
+              <li>City Skylines</li>
             </ul>
           </div>
         </div>

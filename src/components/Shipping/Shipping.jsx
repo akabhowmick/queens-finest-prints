@@ -1,6 +1,7 @@
 import React from 'react';
 import Summary from '../Summary/Summary.jsx';
 import './Shipping.css';
+import CheckoutStatusBar from '../Sections/CheckoutStatusBar.jsx';
 
 class Shipping extends React.Component{
   constructor(props){
@@ -121,7 +122,8 @@ class Shipping extends React.Component{
   render(){
     return(
       <div>
-        <h3>Shipping Information</h3>
+        <CheckoutStatusBar cart shipping></CheckoutStatusBar>
+        <h2 className='page-title'>Shipping Information</h2>
         <div className='shipping-form'>
           <div className='shipping-info'>
             <div className="row">
@@ -129,7 +131,7 @@ class Shipping extends React.Component{
                 <div className="container">
                   <div className="row">
                     <div className="col-50">
-                      <h4>Shipping Address</h4>
+                      <h3>Shipping Address</h3>
                       <div>
                         {this.state.errorMessage.length > 0 &&
                         <div className='error-message-field-text'>{this.state.errorMessage}</div>}

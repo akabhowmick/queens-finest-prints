@@ -1,3 +1,10 @@
+/* .confirm-view{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+} */
+
 .fa-check-circle{
   font-size: 5rem;
   color: white;
@@ -55,7 +62,7 @@
   }
 }
 
-.confirm-main-div, .send-info-div{
+.send-info-div{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -63,8 +70,13 @@
   align-content: center;
 }
 
+.confirm-main-div{
+  flex-direction: column;
+}
+
 #product-image{
   color: var(--logo-blue);
+  white-space: break-spaces;
 }
 
 .product-image-div #myFile{

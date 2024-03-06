@@ -2,6 +2,7 @@ import React from 'react';
 import Summary from '../Summary/Summary.jsx';
 import './Cart.css';
 import CartItem from './CartItem.jsx';
+import CheckoutStatusBar from '../Sections/CheckoutStatusBar.jsx';
 
 class Cart extends React.Component{
   constructor(props){
@@ -40,12 +41,13 @@ class Cart extends React.Component{
     return(
       <div>
         <div className='cart-summary-flexbox'>
+          <CheckoutStatusBar cart></CheckoutStatusBar>
           <div className='main-cart'>
+            <h3>Complete the customization for the items in the cart!</h3>
+            <h4>Upload reference pictures at confirmation! (optional)</h4>
             <div className='cart-table-entry'>
             {!this.state.cartEmpty &&
-              <div>
-                <h3>Complete the customization for the items in the cart!</h3>
-                <h4>If you want to submit additional pictures, please do so during confirmation!</h4>
+              <div className='cart-grid' style={{display: 'grid'}} id='card-grid-phone'>
               {this.state.cart.map(function(item,index){
                 return (
                   <div key={ index } id={ index }>

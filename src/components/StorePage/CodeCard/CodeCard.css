@@ -30,6 +30,7 @@
 .card-details-pic img{
   width: 100%;
   object-fit: cover;
+  height: 350px;
 }
 
 .card:hover{
@@ -37,7 +38,7 @@
 }
 
 .card-details{
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   right: 0;

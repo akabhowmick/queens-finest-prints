@@ -7,7 +7,7 @@
 .mini-cart-item{
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin: 2rem;
 }
 
@@ -61,9 +61,15 @@
 
 .cart-info h4{
   color:black;
+  font-weight: 500;
 }
 
 .summary-title{
   text-align: center;
   text-decoration: underline;
+}
+
+.payment-view .summary-title, .payment-summary h5{
+  text-align: left;
+  margin-left: 2rem;
 }

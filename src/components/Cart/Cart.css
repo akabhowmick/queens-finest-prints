@@ -1,6 +1,10 @@
 .cart-summary-flexbox{
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
+}
+
+.cart-grid{
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 .cart-items{
@@ -71,4 +75,21 @@
   display: inline-block;
   color: var(--logo-blue);
   font-size: 15px;
+}
+
+@media screen and (max-width: 768px){
+  .cart-summary-flexbox{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  #card-grid-phone{
+    grid-template-columns: 100%;
+  }
+}
+
+h4{
+  color: var(--logo-orange);
+  font-weight: 700;
+  font-size: 2rem;
 }

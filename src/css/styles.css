@@ -427,3 +427,6 @@ button:not(:disabled):not(.disabled){
   width: 100%;
 }
 
+.page-title{
+  margin: 3rem auto;
+}

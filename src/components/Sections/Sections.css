@@ -50,6 +50,20 @@ h1{
   }
 }
 
+@media screen and (max-width: 900px) {
+  @keyframes animate{
+    from{
+      width: 0;
+    } 
+    to {
+      width: 100%;
+    }
+  }
+  .slogan{
+    font-size: 3.5rem;
+  }
+}
+
 .action-btns{
   margin: 1rem 1rem 2rem;
 }
@@ -235,3 +249,24 @@ h1{
   margin-bottom: 0;
 }
 
+
+
+/* Checkout Status Bar */
+.checkout-steps {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto;
+}
+.checkout-steps > div {
+  border-top: 0.3rem var(--logo-orange) solid;
+  color: var(--logo-orange);
+  flex: 1 1;
+  opacity: 0.5;
+  padding-top: 1rem;
+  margin-right: 1rem;
+}
+.checkout-steps > div.active {
+  border-top: 0.3rem #f08000 solid;
+  color: #f08000;
+  opacity: 1;
+}
