@@ -24,13 +24,13 @@ class Footer extends React.Component {
               className="fake-icon-a"
               href="https://www.ebay.com/sch/chris_cards_3/m.html?_nkw=&_armrs=1&_ipg=&_from="
             >
-              <img className="fake-icon" src={ebay} />
+              <img className="fake-icon" src={ebay}  alt="ebay-icon"/>
             </a>
             <a className="fake-icon-a" href="https://www.tiktok.com/@queensfinestcards">
-              <img className="fake-icon" src={tiktok} />
+              <img className="fake-icon" src={tiktok} alt="tiktok-icon" />
             </a>
             <a className="fake-icon-a" href="https://www.etsy.com/shop/QueensFinestPrints">
-              <img className="fake-icon" src={etsy} />
+              <img className="fake-icon" src={etsy} alt="etsy-icon" />
             </a>
           </div>
           <p className="copyright">Queens Finest Prints &copy; 2022</p>

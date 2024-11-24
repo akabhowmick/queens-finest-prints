@@ -21,6 +21,7 @@ const ButtonWrapper = ({ amount, currency, showSpinner, setPaymentSuccess }) => 
                 currency: currency,
             },
         });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currency, showSpinner]);
 
 

@@ -1,6 +1,6 @@
-.card-input-grid{
+.card-input-grid {
   display: flex;
-  justify-content:  space-evenly;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
@@ -15,29 +15,30 @@
   padding: 1.25rem 1rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgb(255, 255, 255, 25%);
-  transition: all .35s ease-in;
+  transition: all 0.35s ease-in;
   max-width: 400px;
   min-width: 250px;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(14px);
 }
 
-.card h3, .card h4{
-  color: #0D1321;
+.card h3,
+.card h4 {
+  color: #0d1321;
 }
 
 .card .card-image img,
-.card-details-pic img{
+.card-details-pic img {
   width: 100%;
   object-fit: cover;
   height: 350px;
 }
 
-.card:hover{
+.card:hover {
   box-shadow: 0 0 10px rgb(255, 255, 255, 1);
 }
 
-.card-details{
+.card-details {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -58,7 +59,7 @@
 }
 
 .card-details .desc,
-.card-details h3{
+.card-details h3 {
   color: var(--logo--blue);
   font-size: 16px;
   margin: 2rem;
@@ -66,7 +67,7 @@
   text-align: left;
 }
 
-.card-details h3{
+.card-details h3 {
   margin: 0.25rem;
   padding: 0;
   margin-top: 2rem;
@@ -76,43 +77,50 @@
   color: var(--logo--blue);
 }
 
-.orange-price{
+.orange-price {
   color: var(--logo-orange);
 }
 
-.error-message-field{
+.error-message-field {
   color: red;
 }
 
-.card-details-pic{
+.card-details-pic {
   display: flex;
   flex-direction: column;
 }
 
-.card-details-pic img{
+.card-details-text p {
+  color: black;
+  font-size: 1.5rem;
+  text-align: left;
+  padding: 0.5rem 1rem;
+}
+
+.card-details-pic img {
   min-width: 250px;
   max-width: 350px;
-  height:fit-content;
+  height: fit-content;
   margin: 1rem auto;
 }
 
-.card-details .card-modal{
+.card-details .card-modal {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
-.card-details-text{
+.card-details-text {
   margin-bottom: 50px;
 }
 
-.card-details-pic .slide-ctrl-container{
+.card-details-pic .slide-ctrl-container {
   margin: 0 auto;
   min-width: 250px;
   max-width: 350px;
 }
 
-.card-details-pic .slide-ctrl-container button{
+.card-details-pic .slide-ctrl-container button {
   color: var(--logo-orange);
 }

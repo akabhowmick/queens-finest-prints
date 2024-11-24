@@ -1,4 +1,4 @@
-.hidden{
+.hidden {
   display: none;
 }
 
@@ -26,58 +26,74 @@
   list-style: none;
 }
 @keyframes scrollUp {
-  15%, 25% {
+  15%,
+  25% {
     transform: translateY(-20%);
- }
-  40%, 50% {
+  }
+  40%,
+  50% {
     transform: translateY(-40%);
- }
-  65%, 75% {
+  }
+  65%,
+  75% {
     transform: translateY(-60%);
- }
-  90%, 100% {
+  }
+  90%,
+  100% {
     transform: translateY(-80%);
- }
+  }
 }
 
-
 /* loading */
-#svg-spinner{
+#svg-spinner {
   color: blue;
+  transition-duration: 1.2s;
   -webkit-transition-property: -webkit-transform;
   -webkit-transition-duration: 1.2s;
   -webkit-animation-name: rotate;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-  
+
   -moz-transition-property: -moz-transform;
-  -moz-animation-name: rotate; 
-  -moz-animation-duration: 1.2s; 
+  -moz-animation-name: rotate;
+  -moz-animation-duration: 1.2s;
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: linear;
-  
+
   transition-property: transform;
-  animation-name: rotate; 
-  animation-duration: 1.2s; 
+  animation-name: rotate;
+  animation-duration: 1.2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @-webkit-keyframes rotate {
-    from {-webkit-transform: rotate(0deg);}
-    to {-webkit-transform: rotate(360deg);}
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @-moz-keyframes rotate {
-    from {-moz-transform: rotate(0deg);}
-    to {-moz-transform: rotate(360deg);}
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
 }
 
 @keyframes rotate {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-circle{
+circle {
   color: violet;
 }
